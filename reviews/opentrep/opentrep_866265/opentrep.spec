@@ -14,7 +14,7 @@
 #
 Name:           opentrep
 Version:        0.07.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 
 Summary:        C++ library providing a clean API for parsing travel-focused requests
 
@@ -180,11 +180,12 @@ rm -f %{_bindir}/py%{name}
 %endif
 
 %files
-%doc AUTHORS ChangeLog COPYING NEWS README.md
+%license COPYING
+%doc AUTHORS ChangeLog NEWS README.md
 %{_bindir}/%{name}-indexer
 %{_bindir}/%{name}-searcher
 %{_bindir}/%{name}-dbmgr
-%{_libdir}/lib%{name}.so.*
+%{_libdir}/lib%{name}.so.0.*
 %{_mandir}/man1/%{name}-indexer.1.*
 %{_mandir}/man1/%{name}-searcher.1.*
 %{_mandir}/man1/%{name}-dbmgr.1.*
@@ -215,7 +216,7 @@ rm -f %{_bindir}/py%{name}
 
 %files doc
 %doc %{mydocs}/html
-%doc COPYING
+%license COPYING
 
 %if %{with python}
 %files -n python3-%{name}
@@ -226,6 +227,10 @@ rm -f %{_bindir}/py%{name}
 
 
 %changelog
+* Sun Feb 17 2019 Denis Arnaud <denis.arnaud_fedora@m4x.org> 0.07.1-2
+- Specific license tag, no glob for libraries
+- Took into account feedback of BZ#866265
+
 * Wed Jan 16 2019 Denis Arnaud <denis.arnaud_fedora@m4x.org> 0.07.1-1
 - Upstream update
 
