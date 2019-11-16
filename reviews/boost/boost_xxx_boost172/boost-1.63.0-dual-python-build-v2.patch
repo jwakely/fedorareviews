@@ -1,0 +1,87 @@
+--- boost_1_63_0/libs/mpi/build/Jamfile.v2	2016-12-22 06:33:17.000000000 -0600
++++ boost_1_63_0/libs/mpi/build/Jamfile.v2	2017-05-19 01:45:05.485563800 -0500
+@@ -11,6 +11,7 @@
+ import mpi ;
+ import indirect ;
+ import python ;
++import feature ;
+ 
+ libraries = ;
+ 
+@@ -53,18 +54,38 @@ lib boost_mpi
+     <library>../../serialization/build//boost_serialization
+     <library>/mpi//mpi [ mpi.extra-requirements ]
+   ;
++
++rule cond ( test ? : yes * : no * ) { if $(test) { return $(yes) ; } else { return $(no) ; } }
+   
+ libraries += boost_mpi ;  
++rule find-py3-version
++{
++    local versions = [ feature.values python ] ;
++    local py3ver ;
++    for local v in $(versions)
++    {
++        if $(v) >= 3.0
++        {
++            py3ver = $(v) ;
++        }
++    }
++    return $(py3ver) ;
++}
++
++py3-version = [ find-py3-version ] ;
+ 
+   if [ python.configured ]
+   {
+-    lib boost_mpi_python
++
++    rule lib_boost_mpi_python ( is-py3 ? ) {
++
++    lib [ cond $(is-py3) : boost_mpi_python3 : boost_mpi_python ]
+       : # Sources
+         python/serialize.cpp
+       : # Requirements
+         <library>boost_mpi
+         <library>/mpi//mpi [ mpi.extra-requirements ]
+-      	<library>/boost/python//boost_python
++      	[ cond $(is-py3) : <library>/boost/python//boost_python3 : <library>/boost/python//boost_python ]
+         <link>shared:<define>BOOST_MPI_DYN_LINK=1
+         <link>shared:<define>BOOST_MPI_PYTHON_DYN_LINK=1
+         <link>shared:<define>BOOST_PYTHON_DYN_LINK=1        
+@@ -76,7 +97,6 @@ libraries += boost_mpi ;
+       : # Usage requirements
+         <library>/mpi//mpi [ mpi.extra-requirements ]
+       ;
+-    libraries += boost_mpi_python ;   
+ 
+     python-extension mpi 
+       : # Sources
+@@ -93,8 +113,8 @@ libraries += boost_mpi ;
+         python/status.cpp
+         python/py_timer.cpp
+       : # Requirements
+-      	<library>/boost/python//boost_python      
+-        <library>boost_mpi_python
++      	[ cond $(is-py3) : <library>/boost/python//boost_python3 : <library>/boost/python//boost_python ]
++        [ cond $(is-py3) : <library>boost_mpi_python3 : <library>boost_mpi_python ]
+         <library>boost_mpi
+         <library>/mpi//mpi [ mpi.extra-requirements ]
+         <link>shared:<define>BOOST_MPI_DYN_LINK=1    
+@@ -102,6 +122,16 @@ libraries += boost_mpi ;
+         <link>shared:<define>BOOST_PYTHON_DYN_LINK=1    
+         <link>shared <runtime-link>shared
+       ;
++    }
++
++    if $(py3-version) {
++      lib_boost_mpi_python yes ;
++      libraries += boost_mpi_python3 ;
++    } else {
++      lib_boost_mpi_python ;
++      libraries += boost_mpi_python ;
++    }
++
+   }
+ }
+ else if ! ( --without-mpi in  [ modules.peek : ARGV ] )
