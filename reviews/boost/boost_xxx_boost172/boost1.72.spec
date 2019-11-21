@@ -51,7 +51,7 @@ License: Boost and MIT and Python
 URL: http://www.boost.org
 
 #Source0: https://sourceforge.net/projects/%%{name}/files/%%{name}/%%{version}/%%{toplev_dirname}.tar.bz2
-Source0: https://dl.bintray.com/boostorg/master/%{name}_%{version_enc}-snapshot.tar.gz
+Source0: https://dl.bintray.com/boostorg/master/%{name}_%{version_enc}_b1.tar.bz2
 Source1: libboost_thread.so
 
 # Since Fedora 13, the Boost libraries are delivered with sonames
