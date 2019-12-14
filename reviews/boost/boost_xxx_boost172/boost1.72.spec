@@ -50,8 +50,8 @@ License: Boost and MIT and Python
 %global toplev_dirname %{real_name}_%{version_enc}
 URL: http://www.boost.org
 
-#Source0: https://sourceforge.net/projects/%%{name}/files/%%{name}/%%{version}/%%{toplev_dirname}.tar.bz2
-Source0: https://dl.bintray.com/boostorg/master/%{name}_%{version_enc}_b1.tar.bz2
+Source0: https://sourceforge.net/projects/%%{name}/files/%%{name}/%%{version}/%%{toplev_dirname}.tar.bz2
+#Source0: https://dl.bintray.com/boostorg/master/%%{name}_%%{version_enc}.tar.gz
 Source1: libboost_thread.so
 
 # Since Fedora 13, the Boost libraries are delivered with sonames
@@ -114,7 +114,7 @@ Patch4: boost-1.50.0-fix-non-utf8-files.patch
 
 # Add a manual page for bjam, based on the on-line documentation:
 # http://www.boost.org/boost-build2/doc/html/bbv2/overview.html
-#Patch5: boost-1.48.0-add-bjam-man-page.patch
+Patch5: boost-1.48.0-add-bjam-man-page.patch
 
 # https://bugzilla.redhat.com/show_bug.cgi?id=828856
 # https://bugzilla.redhat.com/show_bug.cgi?id=828857
@@ -633,6 +633,7 @@ a number of significant features and is now developed independently.
 find ./boost -name '*.hpp' -perm /111 | xargs chmod a-x
 
 %patch4 -p1
+%patch5 -p1
 %patch15 -p0
 %patch25 -p1
 %patch51 -p1
@@ -640,6 +641,7 @@ find ./boost -name '*.hpp' -perm /111 | xargs chmod a-x
 %patch62 -p1
 %patch65 -p1
 %patch82 -p1
+#%%patch83 -p1
 
 %build
 # Dump the versions being used into the build logs.

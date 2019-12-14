@@ -1,6 +1,6 @@
 --- boost_1_57_0/tools/build/src/tools/python.jam	2013-05-21 06:14:18.000000000 +0200
 +++ boost_1_55_0/tools/build/src/tools/python.jam	2014-05-29 19:09:12.115413877 +0200
-@@ -99,7 +99,7 @@ feature.feature pythonpath : : free opti
+@@ -94,7 +94,7 @@ feature.feature pythonpath : : free opti
  #   using python : 2.3 : /usr/local/bin/python ;
  #
  rule init ( version ? : cmd-or-prefix ? : includes * : libraries ?
@@ -9,7 +9,7 @@
  {
      project.push-current $(.project) ;
  
-@@ -112,7 +112,7 @@ rule init ( version ? : cmd-or-prefix ? 
+@@ -107,7 +107,7 @@ rule init ( version ? : cmd-or-prefix ? 
          }
      }
  
@@ -18,7 +18,7 @@
  
      project.pop-current ;
  }
-@@ -668,7 +668,7 @@ local rule system-library-dependencies (
+@@ -653,7 +653,7 @@ local rule system-library-dependencies (
  
  # Declare a target to represent Python's library.
  #
@@ -27,7 +27,7 @@
  {
      # Compute the representation of Python version in the name of Python's
      # library file.
-@@ -692,13 +692,13 @@ local rule declare-libpython-target ( ve
+@@ -677,13 +677,13 @@ local rule declare-libpython-target ( ve
      }
  
      # Declare it.
@@ -43,7 +43,7 @@
  {
      local prefix ;
      local exec-prefix ;
-@@ -714,6 +714,7 @@ local rule configure ( version ? : cmd-o
+@@ -699,6 +699,7 @@ local rule configure ( version ? : cmd-o
          extension-suffix ?= _d ;
      }
      extension-suffix ?= "" ;
@@ -51,7 +51,7 @@
  
      local cmds-to-try ;
 
-@@ -970,7 +971,7 @@ local rule configure ( version ? : cmd-o
+@@ -922,7 +923,7 @@ local rule configure ( version ? : cmd-o
      }
      else
      {
