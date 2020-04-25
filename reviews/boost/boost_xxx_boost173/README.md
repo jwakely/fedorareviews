@@ -5,11 +5,15 @@ Boost 1.73 on RedHat/CentOS 8
 
 This directory gives the RPM specification file to package `boost1.73`.
 
+Right now, the RPM specification is exactly the same as on Rawhide. It still
+needs to be altered to embed the version into the package name, so as not
+to collide with the pristine Boost (1.69) on RHEL/CentOS 8. 
+
 ## See also
 * [Bugzilla #XXX - Boost1.73](https://bugzilla.redhat.com/show_bug.cgi?id=),
 * [Spec file for `boost1.73`](https://github.com/fedorapackaging/fedorareviews/blob/master/reviews/boost/boost_xxx_boost173/boost1.73.spec)
-* [Source RPM](https://kojipkgs.fedoraproject.org//work/tasks/2933/43782933/boost-1.73.0-0.1.fc33.src.rpm)
-* [Successful build fpr Rawhide](ihttps://koji.fedoraproject.org/koji/taskinfo?taskID=43782815)
+* [Source RPM](https://kojipkgs.fedoraproject.org//work/tasks/3830/43783830/boost-1.73.0-0.1.el8.src.rpm)
+* [Successful build for Rawhide](https://koji.fedoraproject.org/koji/taskinfo?taskID=43782815)
 * [Successful build for EPEL 8](https://koji.fedoraproject.org/koji/taskinfo?taskID=43783760)
 * [Supporting content](https://github.com/fedorapackaging/fedorareviews/blob/master/reviews/boost/boost_xxx_boost173/)
 
