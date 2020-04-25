@@ -1,0 +1,20 @@
+--- boost_1_73_0/tools/build/src/tools/python.jam~	2020-04-24 14:53:01.900592001 +0100
++++ boost_1_73_0/tools/build/src/tools/python.jam	2020-04-24 14:53:22.685693309 +0100
+@@ -1001,7 +1001,7 @@
+             # linux).
+           : $(usage-requirements)
+             <testing.launcher>$(set-PYTHONPATH)
+-              <library-path>$(libraries) <dll-path>$(dll-path) <library>python.lib
++              <library-path>$(libraries) <library>python.lib
+           ;
+     }
+ 
+@@ -1037,7 +1037,7 @@
+     else
+     {
+         alias python_for_extensions
+-            :
++            : python
+             : $(target-requirements)
+             :
+             : $(usage-requirements)

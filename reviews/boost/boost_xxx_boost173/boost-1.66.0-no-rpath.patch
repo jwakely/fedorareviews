@@ -1,6 +1,6 @@
 --- boost_1_66_0/tools/build/src/tools/gcc.jam~	2018-01-19 13:23:45.361330881 +0000
 +++ boost_1_66_0/tools/build/src/tools/gcc.jam	2018-01-19 13:23:45.362330880 +0000
-@@ -1093,7 +1093,7 @@ rule link ( targets * : sources * : prop
+@@ -1191,7 +1191,7 @@ rule link ( targets * : sources * : prop
  
  actions link bind LIBRARIES
  {
@@ -9,7 +9,7 @@
  }
  
  rule link.dll ( targets * : sources * : properties * )
-@@ -1106,7 +1106,7 @@ rule link.dll ( targets * : sources * :
+@@ -1204,7 +1204,7 @@ rule link.dll ( targets * : sources * :
  # Differs from 'link' above only by -shared.
  actions link.dll bind LIBRARIES
  {
