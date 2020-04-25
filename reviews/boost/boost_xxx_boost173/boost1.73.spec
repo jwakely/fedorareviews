@@ -56,9 +56,9 @@ License: Boost and MIT and Python
 %global toplev_dirname %{real_name}_%{version_enc}
 URL: http://www.boost.org
 
-#Source0: https://sourceforge.net/projects/%%{name}/files/%%{name}/%%{version}/%%{toplev_dirname}.tar.bz2
-#Source0: https://dl.bintray.com/boostorg/master/%%{name}_%%{version_enc}.tar.gz
-Source0: https://dl.bintray.com/boostorg/master/%{name}_%{version_enc}_rc1.tar.gz
+#Source0: https://sourceforge.net/projects/%%{real_name}/files/%%{real_name}/%%{version}/%%{toplev_dirname}.tar.bz2
+#Source0: https://dl.bintray.com/boostorg/master/%%{real_name}_%%{version_enc}.tar.gz
+Source0: https://dl.bintray.com/boostorg/master/%{real_name}_%{version_enc}_rc1.tar.gz
 Source1: libboost_thread.so
 # Add a manual page for b2, based on the on-line documentation:
 # http://www.boost.org/boost-build2/doc/html/bbv2/overview.html
