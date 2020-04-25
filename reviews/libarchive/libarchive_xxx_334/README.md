@@ -16,7 +16,7 @@ for both versions of `libarchive`, more specifically `libarchive.so.13`.
 
 ## See also
 * [Bugzilla #18227927](https://bugzilla.redhat.com/show_bug.cgi?id=1827927),
-  upgrade request for `libarhive` from `3.3.2` to `3.4.2`.
+  upgrade request for `libarchive` from `3.3.2` to `3.4.2`.
 * [Spec file for `libarchive3.4`](https://github.com/fedorapackaging/fedorareviews/blob/master/reviews/libarchive/libarchive_xxx_334/libarchive3.4.spec)
 * [Source RPM](https://kojipkgs.fedoraproject.org//work/tasks/5794/43775794/libarchive3.4-3.4.2-1.el8.src.rpm)
 * [Successful build](https://koji.fedoraproject.org/koji/taskinfo?taskID=43775785)
