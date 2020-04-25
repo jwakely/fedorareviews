@@ -1,0 +1,20 @@
+.TH "b2" 1 "Sat Apr 25 2020" "Boost B2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+b2
+.SH "B2 (Boost\&.Build)"
+.PP
+B2 makes it easy to build C++ projects, everywhere\&.
+.PP
+You name your executables and libraries and list their sources\&. B2 takes care about compiling your sources with right options, creating static and shared libraries, making executables, and other chores — whether you’re using gcc, msvc, or a dozen more supported C++ compilers — on Windows, OSX, Linux and commercial UNIX systems\&.
+.PP
+\fBSimple and high level build description\&.\fP In most cases a name of target and list of sources is all you need\&.
+.PP
+\fBPortability\&.\fP Most important build properties have symbolic names that work everywhere\&. Why memorize compiler flags necessary for multi-threaded 64-bit shared library, if B2 can do it for you?
+.PP
+\fBVariant builds\&.\fP When you build the same project twice with different properties, all produced files are placed in different directories, so you can build with 2 versions of gcc, or both debug and release variants in one invocation\&.
+.PP
+\fBGlobal dependencies\&.\fP No matter what directory you build in, B2 will always check all dependencies in your entire project, preventing inconsistent binaries\&. And it’s easy to use one B2 project in other, again with full dependency tracking\&.
+.PP
+\fBUsage requirements\&.\fP A target can specify properties, like include paths and preprocessor defines, that are necessary to use it\&. Those properties will be automatically applied whenever the target is used\&. 
