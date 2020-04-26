@@ -974,8 +974,10 @@ rm -f tmp-doc-directories
 # Perform the necessary renaming according to package renaming
 # Build Tools
 mv -f $RPM_BUILD_ROOT%{_datadir}/{%{real_name}-build,%{name}-build}
-mv -f $RPM_BUILD_ROOT%{_bindir}/{b2,b2%{version_suffix}}
-mv -f $RPM_BUILD_ROOT%{_mandir}/man1/{b2.1,b2%{version_suffix}.1}
+mv -f $RPM_BUILD_ROOT%{_bindir}/{b2,b2-%{version_suffix}}
+mv -f $RPM_BUILD_ROOT%{_mandir}/man1/{b2.1,b2-%{version_suffix}.1}
+mv -f $RPM_BUILD_ROOT%{_bindir}/{quickbook,quickbook-%{version_suffix}}
+mv -f $RPM_BUILD_ROOT%{_datadir}/{boostbook,%{name}/boostbook}
 
 # MPI
 mkdir -p $RPM_BUILD_ROOT{%{_includedir},%{_libdir}/{.,{mpich,openmpi}/lib}}/%{name}
@@ -1301,13 +1303,13 @@ fi
 
 %files doctools
 %license LICENSE_1_0.txt
-%{_bindir}/quickbook
-%{_datadir}/boostbook/
+%{_bindir}/quickbook-%{version_suffix}
+%{_datadir}/%{name}/boostbook/
 
 %files b2
 %license LICENSE_1_0.txt
-%{_bindir}/b2
-%{_mandir}/man1/b2.1*
+%{_bindir}/b2-%{version_suffix}
+%{_mandir}/man1/b2-%{version_suffix}.1*
 
 %changelog
 * Sun Apr 26 2020 Denis Arnaud <denis.arnaud_fedora@m4x.org> - 1.73.0-1
