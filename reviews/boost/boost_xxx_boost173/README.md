@@ -14,7 +14,7 @@ to collide with the pristine Boost (1.69) on RHEL/CentOS 8.
 * [Spec file for `boost1.73`](https://github.com/fedorapackaging/fedorareviews/blob/master/reviews/boost/boost_xxx_boost173/boost1.73.spec)
 * [Source RPM](https://kojipkgs.fedoraproject.org//work/tasks/3830/43783830/boost-1.73.0-0.1.el8.src.rpm)
 * Builds:
-  + [Boost1.73-1.73.0 (specific package) on EPEL 8](https://koji.fedoraproject.org/koji/taskinfo?taskID=43814181)
+  + [Boost1.73-1.73.0 (specific package) on EPEL 8](https://koji.fedoraproject.org/koji/taskinfo?taskID=43816685)
   + [Boost-1.73.0 (standard package) on Rawhide](https://koji.fedoraproject.org/koji/taskinfo?taskID=43782815)
   + [Boost-1.73.0 (standard package) on EPEL 8](https://koji.fedoraproject.org/koji/taskinfo?taskID=43783760)
 * [Supporting content](https://github.com/fedorapackaging/fedorareviews/blob/master/reviews/boost/boost_xxx_boost173/)
@@ -51,10 +51,10 @@ $ popd
 $ koji build --arch-override=x86_64 --scratch --nowait epel8 ~/dev/packages/SRPMS/boost1.73-1.73.0-1.el8.src.rpm
 Uploading srpm: /home/build/dev/packages/SRPMS/boost1.73-1.73.0-1.el8.src.rpm
 [====================================] 100% 00:01:50 122.27 MiB   1.11 MiB/sec
-Created task: 43816107
-Task info: https://koji.fedoraproject.org/koji/taskinfo?taskID=43816107
+Created task: 43816685
+Task info: https://koji.fedoraproject.org/koji/taskinfo?taskID=43816685
 ```
 
-* Resulting build: https://koji.fedoraproject.org/koji/taskinfo?taskID=43816107
+* Resulting build: https://koji.fedoraproject.org/koji/taskinfo?taskID=43816685
 
 

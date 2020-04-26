@@ -977,6 +977,7 @@ mv -f $RPM_BUILD_ROOT%{_datadir}/{%{real_name}-build,%{name}-build}
 mv -f $RPM_BUILD_ROOT%{_bindir}/{b2,b2-%{version_suffix}}
 mv -f $RPM_BUILD_ROOT%{_mandir}/man1/{b2.1,b2-%{version_suffix}.1}
 mv -f $RPM_BUILD_ROOT%{_bindir}/{quickbook,quickbook-%{version_suffix}}
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/%{name}
 mv -f $RPM_BUILD_ROOT%{_datadir}/{boostbook,%{name}/boostbook}
 
 # MPI
