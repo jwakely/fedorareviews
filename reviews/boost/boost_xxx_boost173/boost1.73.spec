@@ -1225,12 +1225,12 @@ fi
 
 %files static
 %license LICENSE_1_0.txt
-%{_libdir}/*.a
+%{_libdir}/%{name}/*.a
 %if %{with mpich}
-%{_libdir}/mpich/lib/*.a
+%{_libdir}/mpich/lib/%{name}/*.a
 %endif
 %if %{with openmpi}
-%{_libdir}/openmpi/lib/*.a
+%{_libdir}/openmpi/lib/%{name}/*.a
 %endif
 
 # OpenMPI packages
