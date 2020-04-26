@@ -10,11 +10,12 @@ needs to be altered to embed the version into the package name, so as not
 to collide with the pristine Boost (1.69) on RHEL/CentOS 8. 
 
 ## See also
-* [Bugzilla #XXX - Boost1.73](https://bugzilla.redhat.com/show_bug.cgi?id=),
+* [Bugzilla #1828059 - Boost1.73 on EPEL](https://bugzilla.redhat.com/show_bug.cgi?id=1828059)
 * [Spec file for `boost1.73`](https://github.com/fedorapackaging/fedorareviews/blob/master/reviews/boost/boost_xxx_boost173/boost1.73.spec)
-* [Source RPM](https://kojipkgs.fedoraproject.org//work/tasks/3830/43783830/boost-1.73.0-0.1.el8.src.rpm)
-* Builds:
-  + [Boost1.73-1.73.0 (specific package) on EPEL 8](https://koji.fedoraproject.org/koji/taskinfo?taskID=43816685)
+* [Source RPM for `boost1.73-1.73.0-1`](https://denisarnaud.fedorapeople.org/boost/boost1.73/boost1.73-1.73.0-1.el8.src.rpm)
+* [Boost1.73 on Copr](https://copr.fedorainfracloud.org/coprs/denisarnaud/boost1.73/)
+* Successful builds:
+  + [Boost1.73-1.73.0-1 (versioned package) on EPEL 8](https://koji.fedoraproject.org/koji/taskinfo?taskID=43816685)
   + [Boost-1.73.0 (standard package) on Rawhide](https://koji.fedoraproject.org/koji/taskinfo?taskID=43782815)
   + [Boost-1.73.0 (standard package) on EPEL 8](https://koji.fedoraproject.org/koji/taskinfo?taskID=43783760)
 * [Supporting content](https://github.com/fedorapackaging/fedorareviews/blob/master/reviews/boost/boost_xxx_boost173/)
