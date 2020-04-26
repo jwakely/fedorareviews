@@ -1126,8 +1126,8 @@ fi
 
 %files python3-devel
 %license LICENSE_1_0.txt
-%{_libdir}/libboost_numpy%{python3_version_nodots}.so
-%{_libdir}/libboost_python%{python3_version_nodots}.so
+%{_libdir}/%{name}/libboost_numpy%{python3_version_nodots}.so
+%{_libdir}/%{name}/libboost_python%{python3_version_nodots}.so
 %endif
 
 %files random
@@ -1182,46 +1182,46 @@ fi
 %files devel
 %license LICENSE_1_0.txt
 %{_includedir}/%{name}
-%{_libdir}/libboost_atomic.so
-%{_libdir}/libboost_chrono.so
-%{_libdir}/libboost_container.so
-%{_libdir}/libboost_contract.so
+%{_libdir}/%{name}/libboost_atomic.so
+%{_libdir}/%{name}/libboost_chrono.so
+%{_libdir}/%{name}/libboost_container.so
+%{_libdir}/%{name}/libboost_contract.so
 %if %{with context}
-%{_libdir}/libboost_context.so
-%{_libdir}/libboost_coroutine.so
+%{_libdir}/%{name}/libboost_context.so
+%{_libdir}/%{name}/libboost_coroutine.so
 %endif
-%{_libdir}/libboost_date_time.so
+%{_libdir}/%{name}/libboost_date_time.so
 %if %{with context}
-%{_libdir}/libboost_fiber.so
+%{_libdir}/%{name}/libboost_fiber.so
 %endif
-%{_libdir}/libboost_filesystem.so
-%{_libdir}/libboost_graph.so
-%{_libdir}/libboost_iostreams.so
-%{_libdir}/libboost_locale.so
-%{_libdir}/libboost_log.so
-%{_libdir}/libboost_log_setup.so
-%{_libdir}/libboost_math_tr1.so
-%{_libdir}/libboost_math_tr1f.so
-%{_libdir}/libboost_math_tr1l.so
-%{_libdir}/libboost_math_c99.so
-%{_libdir}/libboost_math_c99f.so
-%{_libdir}/libboost_math_c99l.so
-%{_libdir}/libboost_nowide.so
-%{_libdir}/libboost_prg_exec_monitor.so
-%{_libdir}/libboost_unit_test_framework.so
-%{_libdir}/libboost_program_options.so
-%{_libdir}/libboost_random.so
-%{_libdir}/libboost_regex.so
-%{_libdir}/libboost_serialization.so
-%{_libdir}/libboost_wserialization.so
-%{_libdir}/libboost_stacktrace_addr2line.so
-%{_libdir}/libboost_stacktrace_basic.so
-%{_libdir}/libboost_stacktrace_noop.so
-%{_libdir}/libboost_system.so
-%{_libdir}/libboost_thread.so
-%{_libdir}/libboost_timer.so
-%{_libdir}/libboost_type_erasure.so
-%{_libdir}/libboost_wave.so
+%{_libdir}/%{name}/libboost_filesystem.so
+%{_libdir}/%{name}/libboost_graph.so
+%{_libdir}/%{name}/libboost_iostreams.so
+%{_libdir}/%{name}/libboost_locale.so
+%{_libdir}/%{name}/libboost_log.so
+%{_libdir}/%{name}/libboost_log_setup.so
+%{_libdir}/%{name}/libboost_math_tr1.so
+%{_libdir}/%{name}/libboost_math_tr1f.so
+%{_libdir}/%{name}/libboost_math_tr1l.so
+%{_libdir}/%{name}/libboost_math_c99.so
+%{_libdir}/%{name}/libboost_math_c99f.so
+%{_libdir}/%{name}/libboost_math_c99l.so
+%{_libdir}/%{name}/libboost_nowide.so
+%{_libdir}/%{name}/libboost_prg_exec_monitor.so
+%{_libdir}/%{name}/libboost_unit_test_framework.so
+%{_libdir}/%{name}/libboost_program_options.so
+%{_libdir}/%{name}/libboost_random.so
+%{_libdir}/%{name}/libboost_regex.so
+%{_libdir}/%{name}/libboost_serialization.so
+%{_libdir}/%{name}/libboost_wserialization.so
+%{_libdir}/%{name}/libboost_stacktrace_addr2line.so
+%{_libdir}/%{name}/libboost_stacktrace_basic.so
+%{_libdir}/%{name}/libboost_stacktrace_noop.so
+%{_libdir}/%{name}/libboost_system.so
+%{_libdir}/%{name}/libboost_thread.so
+%{_libdir}/%{name}/libboost_timer.so
+%{_libdir}/%{name}/libboost_type_erasure.so
+%{_libdir}/%{name}/libboost_wave.so
 
 %files static
 %license LICENSE_1_0.txt
@@ -1242,8 +1242,8 @@ fi
 
 %files openmpi-devel
 %license LICENSE_1_0.txt
-%{_libdir}/openmpi/lib/libboost_mpi.so
-%{_libdir}/openmpi/lib/libboost_graph_parallel.so
+%{_libdir}/openmpi/lib/%{name}/libboost_mpi.so
+%{_libdir}/openmpi/lib/%{name}/libboost_graph_parallel.so
 
 %if %{with python3}
 
@@ -1254,7 +1254,7 @@ fi
 
 %files openmpi-python3-devel
 %license LICENSE_1_0.txt
-%{_libdir}/openmpi/lib/libboost_mpi_python%{python3_version_nodots}.so
+%{_libdir}/openmpi/lib/%{name}/libboost_mpi_python%{python3_version_nodots}.so
 
 %endif
 
@@ -1273,8 +1273,8 @@ fi
 
 %files mpich-devel
 %license LICENSE_1_0.txt
-%{_libdir}/mpich/lib/libboost_mpi.so
-%{_libdir}/mpich/lib/libboost_graph_parallel.so
+%{_libdir}/mpich/lib/%{name}/libboost_mpi.so
+%{_libdir}/mpich/lib/%{name}/libboost_graph_parallel.so
 
 %if %{with python3}
 
@@ -1285,7 +1285,7 @@ fi
 
 %files mpich-python3-devel
 %license LICENSE_1_0.txt
-%{_libdir}/mpich/lib/libboost_mpi_python%{python3_version_nodots}.so
+%{_libdir}/mpich/lib/%{name}/libboost_mpi_python%{python3_version_nodots}.so
 
 %endif
 
